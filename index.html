@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>이승혁의 개인 웹사이트</title>
+<style>
+  :root {
+    box-sizing: border-box;
+    --bg: #f7f8fc;
+    --surface: #ffffff;
+    --text: #1f2430;
+    --muted: #5d6578;
+    --accent: #5b6cff;
+    --accent-soft: #e8ebff;
+    --border: #e3e6f0;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12141c;
+      --surface: #1b1e29;
+      --text: #eceef6;
+      --muted: #a2a9bd;
+      --accent: #8b97ff;
+      --accent-soft: #2a2f4d;
+      --border: #2b3040;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12141c;
+    --surface: #1b1e29;
+    --text: #eceef6;
+    --muted: #a2a9bd;
+    --accent: #8b97ff;
+    --accent-soft: #2a2f4d;
+    --border: #2b3040;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    line-height: 1.7;
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav {
+    max-width: 960px; margin: 0 auto; padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .logo { font-weight: 800; text-decoration: none; font-size: 1.1rem; }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { text-decoration: none; color: var(--muted); font-weight: 600; }
+  .nav-links a:hover { color: var(--accent); }
+
+  main { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  #about { padding: 72px 0 56px; }
+  .wave { font-size: 2.4rem; margin: 0 0 8px; }
+  h1 { font-size: clamp(1.9rem, 5.5vw, 3.2rem); line-height: 1.25; margin: 0 0 14px; letter-spacing: -0.02em; }
+  .who { color: var(--accent); font-weight: 700; margin: 0 0 18px; }
+  .intro { max-width: 560px; color: var(--muted); margin: 0 0 24px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0 0 28px; list-style: none; }
+  .tags li { background: var(--accent-soft); padding: 6px 14px; border-radius: 999px; font-size: 0.92rem; font-weight: 600; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 700;
+    padding: 12px 22px; border-radius: 12px; border: 2px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: #fff; }
+  .btn.secondary { color: var(--accent); }
+  .btn:hover { transform: translateY(-1px); }
+
+  #projects { padding: 24px 0 72px; }
+  h2 { font-size: 1.7rem; margin: 0 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .card h3 { margin: 0; font-size: 1.2rem; }
+  .card p { margin: 0; color: var(--muted); flex: 1; }
+  .card a { color: var(--accent); font-weight: 700; text-decoration: none; }
+  .card a:hover { text-decoration: underline; }
+
+  footer { border-top: 1px solid var(--border); text-align: center; color: var(--muted); padding: 24px 20px; font-size: 0.9rem; }
+
+  @media (max-width: 520px) {
+    .nav-links { gap: 14px; font-size: 0.92rem; }
+    #about { padding-top: 48px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="주 메뉴">
+    <a class="logo" href="#about">✨ 승혁's Space</a>
+    <div class="nav-links">
+      <a href="#about">소개</a>
+      <a href="#projects">작업물</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="about">
+    <p class="wave" aria-hidden="true">👋</p>
+    <h1>아이디어를,<br>직접 만들어 보여드립니다.</h1>
+    <p class="who">국민대학교 1학년 · 이승혁 (학번: 20262085)</p>
+    <p class="intro">HTML로 직접 만들고, 링크 하나로 바로 실행해 볼 수 있는 작업물만 모았습니다. 설명보다 직접 해 보는 게 빠르니까요.</p>
+
+    <ul class="tags">
+      <li>🎓 국민대학교</li>
+      <li>🐣 1학년 (20262085)</li>
+      <li>💻 HTML/CSS</li>
+      <li>🎮 JavaScript 게임 만드는 중</li>
+    </ul>
+
+    <div class="actions">
+      <a class="btn primary" href="#projects">작업물 지금 보기 →</a>
+      <a class="btn secondary" href="mailto:shl7326@naver.com">✉️ 메일 보내기</a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>🌐 내 개인 사이트 만들기</h3>
+        <p>수업을 들으며 만들고 있는 저의 첫 번째 포털 사이트입니다. 새로운 기능과 작업물을 계속 업데이트할 예정이에요!</p>
+        <a href="#about">현재 보고 계신 페이지</a>
+      </article>
+
+      <article class="card">
+        <h3>🐛 지렁이 게임 (Snake)</h3>
+        <p>먹이를 먹을수록 길어지고 빨라지는 클래식 지렁이 게임입니다. 모바일 스와이프도 지원해요.</p>
+        <a href="https://claude.ai/artifact/UYbqU86K4tgbtrzV4k2jRY" target="_blank" rel="noopener">게임 플레이하기 →</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 이승혁 (20262085). All rights reserved.</footer>
+
+</body>
+</html>
